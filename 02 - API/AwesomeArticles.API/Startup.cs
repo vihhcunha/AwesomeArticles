@@ -102,7 +102,7 @@ namespace AwesomeArticles.API
             
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = Path.Combine(@"..\..\", @"01 - Presentation\AwesomeArticlesWebApp\dist\AwesomeArticlesWebApp");
+                configuration.RootPath = "WebApp";
             });
             services.ConfigureSwagger();
         }
@@ -144,7 +144,7 @@ namespace AwesomeArticles.API
 // To learn more about options for serving an Angular SPA from ASP.NET Core,
 // see https://go.microsoft.com/fwlink/?linkid=864501
 
-                 spa.Options.SourcePath = "AwesomeArticlesWebApp";
+                 spa.Options.SourcePath = "WebApp";
 
                 if (env.IsDevelopment())
                 {

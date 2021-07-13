@@ -15,13 +15,13 @@
         <div class="nav-menu" [ngClass]="{'nav-menu-show': mostrarMenu}">
             <div class="menu">
                 <div class="item" *ngIf="userService.userIsAuthenticated()">
-                    <a class="link" [routerLink]='["/articles"]'>Artigos</a>
+                    <a class="link" [routerLink]='["/articles"]' (click)="mostrarMenu = false">Artigos</a>
                 </div>
                 <div class="item" *ngIf="userService.userIsAuthenticated()">
-                    <a class="link" href="#" (click)="sair()">Sair</a>
+                    <a class="link" href="#" (click)="sair()" (click)="mostrarMenu = false">Sair</a>
                 </div>
                 <div class="item" *ngIf="!userService.userIsAuthenticated()">
-                    <a class="link" [routerLink]='["/login"]'>Login</a>
+                    <a class="link" [routerLink]='["/login"]' (click)="mostrarMenu = false">Login</a>
                 </div>
                 
             </div>

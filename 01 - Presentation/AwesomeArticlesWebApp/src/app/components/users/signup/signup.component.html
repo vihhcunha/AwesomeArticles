@@ -8,14 +8,14 @@
                 <div class="col-12 col-md-6 padding-20px">
                     <input class="input-text-center width-100-perc background-color-light-grey" id="name" type="text"
                         formControlName="name" placeholder="Nome" />
-                    <span class="text-danger text-center"  *ngIf="displayMessage.name">
+                    <span class="text-danger text-center" *ngIf="displayMessage.name">
                         <p [innerHTML]="displayMessage.name"></p>
                     </span>
                 </div>
                 <div class="col-12 col-md-6 padding-20px">
                     <input class="input-text-center width-100-perc background-color-light-grey" id="email" type="text"
                         formControlName="email" placeholder="E-mail" />
-                    <span class="text-danger text-center"  *ngIf="displayMessage.email">
+                    <span class="text-danger text-center" *ngIf="displayMessage.email">
                         <p [innerHTML]="displayMessage.email"></p>
                     </span>
                 </div>
@@ -39,15 +39,17 @@
             </div>
         </form>
 
-        <div class="lds-roller" *ngIf="loading">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
+        <div class="text-center" *ngIf="loading">
+            <div class="lds-roller">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
     </div>
 </div>
