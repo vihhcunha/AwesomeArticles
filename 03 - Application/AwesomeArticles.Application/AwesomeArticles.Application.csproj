@@ -4,4 +4,14 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\05 - Domain\AwesomeArticles.Domain\AwesomeArticles.Domain.csproj" />
+    <ProjectReference Include="..\..\07 - CrossCutting\AwesomeArticles.CrossCutting\AwesomeArticles.CrossCutting.csproj" />
+  </ItemGroup>
+
 </Project>
