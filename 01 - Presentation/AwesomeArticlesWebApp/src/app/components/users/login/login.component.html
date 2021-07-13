@@ -1,0 +1,42 @@
+<div class="card">
+    <div class="text-center padding-20px padding-top-40px">
+        <h4>Login</h4>
+    </div>
+    <div class="padding-20px">
+        <form novalidate [formGroup]="formObject">
+            <div class="row">
+                <div class="col-12 padding-20px">
+                    <input class="input-text-center background-color-light-grey" id="email" type="text"
+                        formControlName="email" placeholder="E-mail" />
+                    <span class="text-danger text-center"  *ngIf="displayMessage.email">
+                        <p [innerHTML]="displayMessage.email"></p>
+                    </span>
+                </div>
+                <div class="col-12 padding-20px">
+                    <input class="input-text-center background-color-light-grey" id="password"
+                        type="password" formControlName="password" placeholder="Senha" />
+                    <span class="text-danger text-center" *ngIf="displayMessage.password">
+                        <p [innerHTML]="displayMessage.password"></p>
+                    </span>
+                </div>
+                <div class="col-12 padding-20px text-center ">
+                    <button class="btn btn-dark padding-10px" (click)="submit()">Entrar</button>
+                </div>
+                <div class="col-12 padding-20px text-center ">
+                    <p>Não tem cadastro? <a [routerLink]='["/signup"]' style="color: rgb(32, 32, 32);">Faça o cadastro já!</a></p>
+                </div>
+            </div>
+        </form>
+
+        <div class="lds-roller" *ngIf="loading">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+    </div>
+</div>

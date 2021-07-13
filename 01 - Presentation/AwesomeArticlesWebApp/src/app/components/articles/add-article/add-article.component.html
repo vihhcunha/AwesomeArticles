@@ -1,0 +1,30 @@
+<div class="card">
+    <div class="text-center padding-20px padding-top-40px">
+        <h4>Cadastro de artigos</h4>
+    </div>
+    <div class="padding-20px">
+        <form novalidate [formGroup]="formObject">
+            <div class="row">
+                <div class="col-12 padding-20px">
+                    <input class="input-text-center background-color-light-grey" id="title" type="text"
+                        formControlName="title" placeholder="Título" />
+                    <span class="text-danger text-center"  *ngIf="displayMessage.title">
+                        <p [innerHTML]="displayMessage.title"></p>
+                    </span>
+                </div>
+                <div class="col-12 padding-20px">
+                    <textarea class="input-text-center background-color-light-grey" id="content"
+                        type="text" formControlName="content" placeholder="Conteúdo" style="min-height: 200px; max-height: 1000px;" ></textarea>
+                    <span class="text-danger text-center" *ngIf="displayMessage.content">
+                        <p [innerHTML]="displayMessage.content"></p>
+                    </span>
+                </div>
+                <div class="col-12 padding-20px text-center ">
+                    <button class="btn btn-dark padding-10px" (click)="submit()">Cadastrar</button>
+                </div>
+            </div>
+        </form>
+
+      
+    </div>
+</div>

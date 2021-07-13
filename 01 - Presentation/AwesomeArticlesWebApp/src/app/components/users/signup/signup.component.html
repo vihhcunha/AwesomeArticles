@@ -1,0 +1,53 @@
+<div class="card">
+    <div class="text-center padding-20px padding-top-40px">
+        <h4>Cadastro</h4>
+    </div>
+    <div class="padding-20px">
+        <form novalidate [formGroup]="formObject">
+            <div class="row">
+                <div class="col-12 col-md-6 padding-20px">
+                    <input class="input-text-center width-100-perc background-color-light-grey" id="name" type="text"
+                        formControlName="name" placeholder="Nome" />
+                    <span class="text-danger text-center"  *ngIf="displayMessage.name">
+                        <p [innerHTML]="displayMessage.name"></p>
+                    </span>
+                </div>
+                <div class="col-12 col-md-6 padding-20px">
+                    <input class="input-text-center width-100-perc background-color-light-grey" id="email" type="text"
+                        formControlName="email" placeholder="E-mail" />
+                    <span class="text-danger text-center"  *ngIf="displayMessage.email">
+                        <p [innerHTML]="displayMessage.email"></p>
+                    </span>
+                </div>
+                <div class="col-12 col-md-6 padding-20px">
+                    <input class="input-text-center width-100-perc background-color-light-grey" id="password"
+                        type="password" formControlName="password" placeholder="Senha" />
+                    <span class="text-danger text-center" *ngIf="displayMessage.password">
+                        <p [innerHTML]="displayMessage.password"></p>
+                    </span>
+                </div>
+                <div class="col-12 col-md-6 padding-20px">
+                    <input class="input-text-center width-100-perc background-color-light-grey" id="confirmPassword"
+                        type="password" formControlName="confirmPassword" placeholder="Confirmar senha" />
+                    <span class="text-danger text-center" *ngIf="displayMessage.confirmPassword">
+                        <p [innerHTML]="displayMessage.confirmPassword"></p>
+                    </span>
+                </div>
+                <div class="col-12 padding-20px text-center ">
+                    <button class="btn btn-dark padding-10px" (click)="submit()">Cadastrar</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="lds-roller" *ngIf="loading">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+          </div>
+    </div>
+</div>

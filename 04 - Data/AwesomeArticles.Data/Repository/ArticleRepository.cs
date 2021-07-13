@@ -35,7 +35,10 @@ namespace AwesomeArticles.Data.Repository
 
         public async Task<List<Article>> GetArticles()
         {
-            return await _context.Articles.AsNoTracking().ToListAsync();
+            return await _context.Articles
+                .Include(x => x.Likes)
+                .AsNoTracking()
+                .ToListAsync();
         }
 
         public async Task AddLike(ArticleLike articleLike)

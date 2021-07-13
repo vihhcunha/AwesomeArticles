@@ -1,0 +1,21 @@
+<div class="card">
+    <div *ngIf="article">
+        <div class="text-center padding-20px padding-top-40px">
+            <h4>{{ article.title }}</h4>
+        </div>
+        <div class="padding-20px padding-top-40px">
+            <h5>Conteúdo</h5>
+            <p>{{ article.content}}</p>
+        </div>
+        <div class="padding-20px padding-top-40px text-center">
+            <p>Likes: {{ article.totalLikes}}</p>
+        </div>
+        <div class="text-center padding-20px">
+            <button class="btn btn-success" *ngIf="!article.userLiked" (click)="like()">Curtir</button>
+            <button class="btn btn-dark" *ngIf="article.userLiked" (click)="removeLike()">Retirar curtida</button>
+        </div>
+    </div>
+    <div *ngIf="!article" class="text-center padding-20px">
+        <h5>Não foi possível encontrar o artigo!</h5>
+    </div>
+</div>

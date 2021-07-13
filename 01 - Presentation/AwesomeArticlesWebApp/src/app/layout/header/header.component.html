@@ -1,0 +1,30 @@
+<header>
+    <div class="header-info">
+        <div *ngIf="userService.userIsAuthenticated()" class="header-user-name">
+            <p>Olá, {{ userService.User.name }} !</p>
+        </div>
+    </div>
+    <div class="header-app-name">
+        <p>Awesome Articles</p>
+    </div>
+    <div class="header-menu">
+
+        <div class="button-menu-container">
+            <img src="../../../assets/menu.png" class="button-menu" id="menu-toggle-button" (click)="toggleMenu()" />
+        </div>
+        <div class="nav-menu" [ngClass]="{'nav-menu-show': mostrarMenu}">
+            <div class="menu">
+                <div class="item" *ngIf="userService.userIsAuthenticated()">
+                    <a class="link" [routerLink]='["/articles"]'>Artigos</a>
+                </div>
+                <div class="item" *ngIf="userService.userIsAuthenticated()">
+                    <a class="link" href="#" (click)="sair()">Sair</a>
+                </div>
+                <div class="item" *ngIf="!userService.userIsAuthenticated()">
+                    <a class="link" [routerLink]='["/login"]'>Login</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</header>

@@ -6,6 +6,7 @@ using AwesomeArticles.CrossCutting.Security;
 using AwesomeArticles.CrossCutting.User;
 using AwesomeArticles.Data;
 using AwesomeArticles.Data.Repository;
+using AwesomeArticles.Domain.Entities;
 using AwesomeArticles.Domain.Interfaces;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -32,12 +33,14 @@ namespace AwesomeArticles.API
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
+        public Startup(IConfiguration configuration, IHostEnvironment hostEnvironment)
         {
             Configuration = configuration;
+            HostEnvironment = hostEnvironment;
         }
 
         public IConfiguration Configuration { get; }
+        public IHostEnvironment HostEnvironment { get;  }
 
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -96,10 +99,10 @@ namespace AwesomeArticles.API
             services.AddAutoMapper(typeof(DomainToViewModelMapping));
 
             services.AddHttpContextAccessor();
-
+            
             services.AddSpaStaticFiles(configuration =>
             {
-                configuration.RootPath = "../01 - Presentation/AwesomeArticlesWebApp/dist";
+                configuration.RootPath = Path.Combine(@"..\..\", @"01 - Presentation\AwesomeArticlesWebApp\dist\AwesomeArticlesWebApp");
             });
             services.ConfigureSwagger();
         }
@@ -138,10 +141,10 @@ namespace AwesomeArticles.API
 
             app.UseSpa(spa =>
             {
-                // To learn more about options for serving an Angular SPA from ASP.NET Core,
-                // see https://go.microsoft.com/fwlink/?linkid=864501
+// To learn more about options for serving an Angular SPA from ASP.NET Core,
+// see https://go.microsoft.com/fwlink/?linkid=864501
 
-                spa.Options.SourcePath = "../01 - Presentation/AwesomeArticlesWebApp";
+                 spa.Options.SourcePath = "AwesomeArticlesWebApp";
 
                 if (env.IsDevelopment())
                 {

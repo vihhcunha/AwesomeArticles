@@ -1,0 +1,28 @@
+<div class="card">
+    <div class="text-center padding-20px padding-top-40px">
+        <h4>Todos os artigos</h4>
+    </div>
+    <div class="padding-20px">
+        <div class="padding-20px">
+            <button class="btn btn-success" [routerLink]='["/add-article"]'>Adicionar artigo</button>
+        </div>
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Título</th>
+                        <th>Data</th>
+                        <th>Likes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let a of articles" (click)="visualizarArtigo(a)" class="cursor-pointer">
+                        <td>{{a.title }}</td>
+                        <td>{{a.registrationDate | date:"dd/MM/yyyy"}}</td>
+                        <td>{{a.totalLikes}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
