@@ -1,5 +1,7 @@
 # Awesome Articles
-Para acessar esse projeto funcionando, acesse: [Awesome Articles](https://awesomearticles.azurewebsites.net/login "Awesome Articles")
+
+## Propósito
+* Simular um sistema de artigos, onde o usuário pode fazer um cadastro e login para visualizar/criar artigos e dar um like (ou remover) para artigos existentes.
 
 ## Tecnologias utilizadas
 * ASP.NET Core WebAPI 5.0
@@ -17,5 +19,3 @@ Para acessar esse projeto funcionando, acesse: [Awesome Articles](https://awesom
 * Rich Domain
 * Rest
 
-## Propósito
-* Simular um sistema de artigos, onde o usuário pode fazer um cadastro e login para visualizar/criar artigos e dar um like (ou remover) para artigos existentes.
